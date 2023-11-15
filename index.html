@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Buscados de Contatos</h1>
+    <input type="text" name="" id="digitou" />
+    <button id="Buscar" onclick="achar()">Buscar</button>
+    <p></p>
+
+    <script>
+      let p = document.querySelector("p");
+      let input = document.querySelector("input");
+
+      const contatos = [
+        { nome: "Matheus", numero: "18 9999-9999" },
+        { nome: "Luana", numero: "18 5555-5555 " },
+        { nome: "Neide", numero: "18 2222-2222" },
+        { nome: "Gu", numero: "18 3333-3333" },
+      ];
+
+      function achar() {
+        for (let i = 0; i < contatos.length; i++) {
+          if (input.value.toLowerCase() === contatos[i].nome.toLowerCase()) {
+            p.innerHTML = `Contato Encontrado!
+            Nome: ${contatos[i].nome}. 
+            Tel: ${contatos[i].numero}`;
+            break;
+          } else {
+            p.innerHTML = "contato não encontrado";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>
